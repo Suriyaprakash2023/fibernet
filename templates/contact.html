@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+      <!-- main-area -->
+        <main>
+
+            <!-- breadcrumb-area -->
+            <section class="breadcrumb-area breadcrumb-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-8">
+                            <div class="breadcrumb-content">
+                                <h3 class="title">Contact Us</h3>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb-area-end -->
+
+            <!-- contact-area -->
+            <section class="contact-area pt-115 pb-120">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="contact-title">
+                                <h3 class="title">Get in Touch</h3>
+                            </div>
+                            <form action="" method="POST"  id="enquiryForm"  class="contact-form" onSubmit="return false;" encytype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-grp">
+                                            <input type="hidden" id="CForm" name="CForm">
+			                                <input class="form-control" name="name" placeholder="Name*" type="text" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-grp">
+                                            <input class="form-control" name="email" placeholder="Email*" type="email" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-grp">
+                                           <input class="form-control" name="mobile" placeholder="Mobile*" type="number" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-grp">
+                                            <textarea class="form-control" name="message" placeholder="Message" style="height: auto;"></textarea>
+                                          </div>
+                                    </div>
+                                </div>
+								<input type="hidden" id="url" name="url" value="">
+                               <!-- <p class="contact-form-check">
+                                    <input type="checkbox" class="form-check-input" id="cookies-consent">
+                                    <label for="cookies-consent" class="form-check-label">I agree with that, my data is being saved for further contact, see our <a href="contact.html">Privacy Policy</a></label>
+                                </p>-->
+								<button type="submit" class="mt-2 sbbtn d-flex justify-content-center align-items-center btn btn-success" id="btnSubmit1" style="width:100%; border-radius:0;">
+									<span id="submitText">Enquiry Now!</span>
+									<div id="loadingSpinner" class="spinner-border text-light" style="display:none; width: 1.5rem; height: 1.5rem; margin-left: 10px;">
+										<span class="visually-hidden">Processing...</span>
+									</div>
+									<div id="successMessage" style="display:none; color: white; font-size: 20px; margin-left: 10px;">
+										<i class="bi bi-check-circle" style="color: white;"></i> Success
+									</div>
+								</button>
+			
+                            </form>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="contact-info-wrap">
+                                <h1 class="contact-info-title">Best Fibernet broadband Plans</h1>
+                                <p align="justify">We are the <b>Best Fibernet broadband Plans provider in Chennai.</b> Step into the future of unlimited broadband plans with fibernet technology. Experience the high-speed internet on our existing Fiber <b>broadband connection in Chennai </b>across multiple devices.  </p>
+                                <ul class="contact-info-list">
+                                    <li><i class="fal fa-phone"></i> <a href="tel:7603883971">+91 7603883971</a></li>
+                                </ul>
+                            </div>
+                            <div class="contact-info-wrap">
+                                <ul class="contact-info-list">
+                                    <li><i class="fal fa-envelope"></i> <a href="mailto:arunairtel41@gmail.com">arunairtel41@gmail.com</a></li>
+                                </ul>
+                            </div>
+                            <div class="contact-info-wrap">
+                                <ul class="contact-info-list">
+                                    <li><i class="fal fa-map-marker-alt"></i> <span>Chennai</span></li>
+                                </ul>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- contact-area-end -->
+
+            <!-- contact-map -->
+            <div id="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248788.04899693522!2d80.12351353045979!3d13.015712113474425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1649581257898!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+            <!-- contact-map-end -->
+
+            <!-- brand-area -->
+            <div class="brand-area pt-40 pb-40">
+                <!-- <div class="container">
+                    <div class="row brand-active">
+                        <div class="col">
+                            <div class="brand-item">
+                                <a href="#"><img src="img/brand/brand_item01.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="brand-item">
+                                <a href="#"><img src="img/brand/brand_item02.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="brand-item">
+                                <a href="#"><img src="img/brand/brand_item03.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="brand-item">
+                                <a href="#"><img src="img/brand/brand_item04.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="brand-item">
+                                <a href="#"><img src="img/brand/brand_item05.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <!-- brand-area-end -->
+
+
+        </main>
+        <!-- main-area-end -->
+
+{% endblock content %}

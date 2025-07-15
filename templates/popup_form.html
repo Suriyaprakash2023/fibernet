@@ -1,0 +1,154 @@
+
+{% load static %}
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="{% static 'js/jquery.pan.js' %}"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+$(".pan").pan();
+})
+</script>
+
+
+<!-------------------------------------POPUP ------------------------->
+<style>
+#close {
+    width: 40px !important;
+    right: -15px;
+    position: absolute;
+    top: -14px;
+cursor:pointer
+}
+</style>
+<style>
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1em + 1.75rem + 2px);
+  /*  padding: 0.375rem 0.75rem; */
+  margin-bottom: 18px;
+    /*font-size: 1rem;*/
+    font-weight: 400;
+    line-height: 1.5;
+    /* border:0; */
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+</style>
+<!--Contact Form-->
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12" id="contact-popup">
+	<center>
+        <form action="" method="POST" id="enquiryForm"  class="contact-form1" onSubmit="return false;" encytype="multipart/form-data">
+			  {% csrf_token %}
+          <img id="close" src="{% static 'img/closebtn.png' %}" onclick ="div_hide()">
+              <h1 class="formHeader">Enquiry Now.!</h1>
+              <h4 class="formHeader1 blink_me" style="color:red;">Get Free Router & Installation</h4>
+			  <h4 class="formHeader1" style="color:green;">  Services Available throughout Tamil Nadu  </h4>
+			
+				<div class="mb-3">
+					<input type="hidden" id="CForm" name="CForm">
+					<input class="form-control" name="name" placeholder="Name*" type="text" required="required">
+				</div>
+				<div class="mb-3">
+					<input class="form-control" name="email" placeholder="Email*" type="email" required="required">
+				</div>
+				<div class="mb-3">
+					<input class="form-control" name="mobile" placeholder="Mobile*" type="number" required="required">
+				</div>
+				<div class="mb-3">
+					<textarea class="form-control" name="message" placeholder="Message" ></textarea>
+				</div>
+				<input type="hidden" id="url" name="url" value="">
+				
+				<button type="submit" class="mt-2 sbbtn d-flex justify-content-center align-items-center" id="submitBtn" style="width:100%; border-radius:0;">
+					<span id="submitText">Enquiry Now!</span>
+					<div id="loadingSpinner" class="spinner-border text-light" style="display:none; width: 1.5rem; height: 1.5rem; margin-left: 10px;">
+						<span class="visually-hidden">Processing...</span>
+					</div>
+					<div id="successMessage" style="display:none; color: white; font-size: 20px; margin-left: 10px;">
+						<i class="bi bi-check-circle" style="color: white;"></i> Success
+					</div>
+				</button>
+			
+      </form>
+			</center>
+    </div>
+    </div>
+    </div>
+<!--Contact Form-->
+<script>
+$(document).ready(function () {
+    $(".contact-icon").click(function () {
+        $("#contact-popup").show();
+    });
+
+	$("#close").click(function () {
+        $("#contact-popup").hide();
+    });
+});
+</script>
+
+<script>
+const myTimeout = setTimeout(myGreeting, 8000);
+
+function myGreeting() {
+  document.getElementById("contact-popup").style.display = "block";
+}
+
+function myStopFunction() {
+  clearTimeout(myTimeout);
+}
+</script>
+ 
+
+
+<style>
+    .form-control {
+        padding: .675rem .75rem;
+		border: 0;
+		border-bottom: 1px solid lightgrey;
+    }
+	.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1.5rem 2rem;
+}
+    .sbbtn {
+        color: white;
+        background: green;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 1.4;
+        margin-bottom: 0;
+        padding: 19px 50px;
+        border: 0;
+    }
+    .spinner-border {
+        margin-right: 10px;
+    }
+	#enquiryForm input{
+	padding-bottom: 1.3rem;
+	}
+	.form-control:focus {
+	box-shadow:none;
+	border-bottom: 1px solid #008000;
+	}
+</style>
+</body>
+
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl508079'},{'dcenter':'sg2'},{'cp_id':'10255037'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script>
+<script src='{% static "js/scc-c2.min.js" %}'></script>
+<!-- Mirrored from www.fibernetbroadbandchennai.in/hathway-new-broadband-connection-in-velachery.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 07 Jul 2025 04:17:55 GMT -->
+</html>

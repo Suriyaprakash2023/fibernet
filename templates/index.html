@@ -1,0 +1,671 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main>
+
+            <!-- banner-area -->
+            <section class="banner-area banner-bg" data-background="{% static 'img/slider/banner_bg.jpg' %}">
+                <div class="container">
+                    <div class="row">
+                   
+                        <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="banner-content">
+                                <div class="formbg fadeInUp wow">
+									<h3><span>Enquiry Now to Get </br>15% Discount</span></h3>
+									<form action="#" method="POST" id="airtelauth"  onSubmit="return false;" encytype="multipart/form-data" class="fadeInUp">
+										  <!-- 2 column grid layout with text inputs for the first and last names -->
+										  
+											  <div class="form-outline mb-4">
+											  <input type="hidden" id="airtelauthid" name="airtelauthid">
+												
+												<input class="form-control" name="name" placeholder="Name*" type="text" required="required">
+											  </div>
+										  <!-- Email input -->
+										  <div class="form-outline mb-4">
+											<input class="form-control" name="email" placeholder="Email*" type="email" required="required">
+										  </div>
+
+										  <!-- Number input -->
+										  <div class="form-outline mb-4">
+											<input class="form-control" name="mobile" placeholder="Mobile*" type="number" required="required">
+										  </div>
+										  <div class="form-outline mb-4">												
+											<input class="form-control" name="address" placeholder="Installation Address*" type="text" required="required">
+										</div>
+
+										  <!-- Message input -->
+										  <div class="form-outline mb-4">
+											<textarea class="form-control" name="message" placeholder="Message*" required="required"></textarea>
+										  </div>
+										   <!--<div class="alert alert-success message success1" style="display:none;">Thank You, we'll get back you soon. </div>
+											<div class="alert alert-danger message failure1" style="display:none;">Sorry, Please try again </div> -->
+										<!-- Submit button -->
+										  <button type="submit" id="btnSubmit" class="btn btn-primary btn-block mb-4 HFormBtn" style="">Book Now</button>
+										  
+									</form>
+								</div> 
+									<div class="DealingHeader pt-20 pb-10">
+										<h4 class="text-center">We are Dealing Broadbands in</h4>
+										<h5>Airtel | ACT | Hathway</h5>
+									</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-phone">
+                    <div class="icon">
+                        <i class="fal fa-mobile-android"></i>
+                    </div>
+                    <div class="content">
+                        <span><h5 style="font-size:18px; font-weight: 600;">Customer Service:</h4></span>
+                        <h5 class="number"><a class="text-decoration-none" href="tel:+917603883971">7603883971</a></h5>
+                    </div>
+                </div>
+            </section>
+            <!-- banner-area-end -->
+
+           
+
+            <!-- services-area -->
+            <section class="services-area pt-110 pb-90">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-5 col-lg-7">
+                            <div class="section-title text-center mb-50">
+                                <h2 class="title">Find Perfect Network Solutions</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-10">
+                         <a href="{% url 'airtel' %}">   <div class="services-item">
+                                <div class="services-icon">
+                                   <ul class="devices-icon-wrap">
+                                        <li><i class="flaticon-tv"></i></li>
+                                        <li><i class="flaticon-wifi-router-1"></i></li>
+                                        <li><i class="flaticon-device"></i></li>
+                                        <li><i class="flaticon-laptop"></i></li>
+                                    </ul> 
+                                </div>
+                                <div class="services-content">
+                                    <h3 class="title text-center"><a href="{% url 'airtel' %}">Airtel Plans</a></h3>
+                                </div>
+                            </div></a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-10">
+                           <a href="{% url 'act' %}"> <div class="services-item">
+                                <div class="services-icon">
+                                    <ul class="devices-icon-wrap">
+                                        <li><i class="flaticon-tv"></i></li>
+                                        <li><i class="flaticon-wifi-router-1"></i></li>
+                                        <li><i class="flaticon-device"></i></li>
+                                        <li><i class="flaticon-laptop"></i></li>
+                                    </ul>
+                                </div>
+                                <div class="services-content">
+                                    <h3 class="title text-center"><a href="">ACT Plans</a></h3>
+                                </div>
+                            </div></a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-10">
+                           <a href=""> <div class="services-item">
+                                <div class="services-icon">
+                                   <ul class="devices-icon-wrap">
+                                        <li><i class="flaticon-tv"></i></li>
+                                        <li><i class="flaticon-wifi-router-1"></i></li>
+                                        <li><i class="flaticon-device"></i></li>
+                                        <li><i class="flaticon-laptop"></i></li>
+                                    </ul>
+                                </div>
+                                <div class="services-content">
+                                    <h3 class="title text-center"><a href="">Hathway Plans</a></h3>
+                                </div>
+                            </div></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- services-area-end -->
+
+			       <!-- pricing-three-area -->
+            <section class="pricing-three-area pt-60">
+                <div class="container">
+                    <div class="row justify-content-center">
+					 <div class="row justify-content-center">
+						 <div class="col-xl-5 col-lg-6 col-md-8">
+							 <div class="section-title text-center mb-20">
+								 <h2 class="title">Our Best Value Plans</h2> </br>
+								 <h5  style="color:red;">Airtel Broadband Plans in Chennai</h5>
+								 <hr class="line mt-2"style="border-top :3px solid red; ">
+								 
+							 </div>
+							 
+						 </div>
+					 </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8  col-10">
+                            <div class="pricing-three-item mb-30">
+                                <div class="pricing-three-head">
+                                    <h4 class="title">Standard </h4>
+                                    <span class="devices-support"></span>
+                                    <ul class="devices-icon-wrap">
+                                        <li><i class="flaticon-tv"></i></li>
+                                        <li><i class="flaticon-wifi-router-1"></i></li>
+                                        <li><i class="flaticon-device"></i></li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-three-list">
+                                    <ul>
+                                        <li>40 Mbps Speed</li>
+                                        <li>Unlimited Data</li>
+                                        <li>Streaming Apps : No</li>
+                                    </ul>
+                                </div>
+								</br>
+								</br>
+                                <h2 class="pricing-three-price"><span>From</span> ₹ 499<span> + GST</span></h2>
+                                <a href="" class="btn transparent-btn">Enquiry Now</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 col-10">
+                            <div class="pricing-three-item mb-30">
+                                <div class="pricing-three-head">
+                                    <h4 class="title">Premium </h4>
+                                    <span class="devices-support"></span>
+                                    <ul class="devices-icon-wrap">
+                                        <li><i class="flaticon-tv"></i></li>
+                                        <li><i class="flaticon-wifi-router-1"></i></li>
+                                        <li><i class="flaticon-device"></i></li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-three-list">
+                                    <ul>
+                                        <li>100 Mbps Speed</li>
+                                        <li>Unlimited Data</li>
+                                        <li>Streaming Apps : No</li>
+                                    </ul>
+                                </div>
+								</br>
+								</br>
+                                <h2 class="pricing-three-price"><span>From</span> ₹ 799<span> + GST</span></h2>
+                                <a href="" class="btn transparent-btn">Enquiry Now</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 col-10">
+                            <div class="pricing-three-item mb-30">
+                                <div class="pricing-three-head">
+                                    <h4 class="title">Entertainment </h4>
+                                    <span class="devices-support"></span>
+                                    <ul class="devices-icon-wrap">
+                                        <li><i class="flaticon-tv"></i></li>
+                                        <li><i class="flaticon-wifi-router-1"></i></li>
+                                        <li><i class="flaticon-device"></i></li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-three-list">
+                                    <ul>
+                                        <li>200 Mbps Speed</li>
+                                        <li>Unlimited Data</li>
+                                        <li>Streaming Apps : Amazon Prime & Disney+ Hotstar</li>
+                                    </ul>
+                                </div>
+                                <h2 class="pricing-three-price"><span>From</span> ₹ 999<span> + GST</span></h2>
+                                <a href="" class="btn transparent-btn">Enquiry Now</a>
+                            </div>
+                        </div>
+						<div class="subscribe-plan justify-content-center">
+							<a href="{% url 'airtel' %}" class="btn transparent-btn emp text-decoration-none"> View All Airtel Plans</a>
+							
+						</div>
+                    </div>
+                </div>
+            </section>
+            <!-- pricing-three-area-end -->
+
+
+            <!-- cta-area 
+            <section class="cta-area cta-bg jarallax" data-background="img/bg/cta_bg.jpg">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-9 col-lg-10">
+                            <div class="cta-content text-center">
+                                <div class="section-title white-title mb-35">
+                                    <h2 class="title">Need Fast & Secure Broadband? Use Netfix & The Real Network</h2>
+                                </div>
+                                <div class="cta-btn-wrap">
+                                    <a href="" class="btn">View our Plans</a>
+                                    <span class="or">OR</span>
+                                    <a href="tel:123" class="btn transparent-btn">+1 870 920 987</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             cta-area-end -->
+
+            <!-- special-offer-area -->
+            <section class="special-offer-area pt-120 pb-120">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 order-0 order-lg-2">
+                            <div class="special-offer-img wow fadeInRight" data-wow-delay=".2s">
+                                <img src="{% static 'img/images/special_offer_img.jpg' %}" alt="">
+                                <div class="special-offer-text">Special offer</div>
+                                <div class="special-offer-mbps">
+                                    <span>UP TO</span>
+                                    <h3 class="title">40 MBPS</h3>
+                                    <p>PER Second</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="section-title mb-40">
+                                <h2 class="title">ACT Fibernet Broadband Plans At Very Low Price</h2>
+                            </div>
+                            <div class="special-offer-content">
+                                <p> ACT Fibernet Broadband Plans in Chennai. At Very Low Price, Experience speeds like never before with ACT broadband in Chennai. 24*7 Customer Service, Connect Multiple Devices.</p>
+                                <div class="special-price-wrap">
+                                    <h2 class="special-price"><sup>₹</sup>549<sub>Monthly</sub></h2>
+                                    <p class="trial-link"><i class="flaticon-wifi-router"></i><a href="{% url 'contact' %}">Try For 1 Month</a></p>
+                                </div>
+                                <a href="#" class="btn transparent-btn">Book Now</a> &nbsp; <a href="" class="btn transparent-btn emp"> More Plans</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- special-offer-area-end -->
+
+            <!-- subscribe-area -->
+            <section class="subscribe-area subscribe-bg" data-background="img/bg/subscribe_bg.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-6">
+                            <div class="subscribe-img wow fadeInLeft" data-wow-delay=".2s">
+                                <img src="{% static 'img/10.jpg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="section-title mt-60 mb-30">
+                                <h2 class="title">Enjoy Unlimited Data with Hathway</h2>
+                            </div>
+                            <div class="subscribe-content">
+                                <p>One of the leading Hathway Fibernet Broadband Plans provider in Chennai</p>
+                               <!-- <h4 class="title"><span>Subscribe Netfix TV Box & Get</span>  Wi-Fi For 1 Month</h4> -->
+                                <div class="subscribe-plan">
+                                    <h2 class="price"><span>40 Mbps Speed </span> ₹499<sub>/Mon</sub></h2>
+                                    <a href="" class="btn btn-link">View All Plans</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- subscribe-area-end -->
+
+            <!-- faq-area 
+            <section class="faq-area pt-110 pb-120">
+                <div class="container">
+                    <div class="row align-items-center align-items-xl-end">
+                        <div class="col-lg-6">
+                            <div class="section-title mb-40">
+                                <h2 class="title">Frequently Asked Questions</h2>
+                            </div>
+                            <div class="faq-wrapper">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                aria-expanded="true" aria-controls="collapseOne">
+                                                Do I have to be an existing T-Mobile customer?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                Yes! You'll be able to use your T-Mobile Home Internet to connect your computer, phone, and numerous other devices in your home simultaneously. People over time-we appreciate your patience! As soon as we're ready for you, we'll let you know
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                What is a commercial on-line service?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                Yes! You'll be able to use your T-Mobile Home Internet to connect your computer, phone, and numerous other devices in your home simultaneously. People over time-we appreciate your patience! As soon as we're ready for you, we'll let you know
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                How much does the T-Mobile Home Internet plan cost?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                Yes! You'll be able to use your T-Mobile Home Internet to connect your computer, phone, and numerous other devices in your home simultaneously. People over time-we appreciate your patience! As soon as we're ready for you, we'll let you know
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                How can I get Internet for my business?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                Yes! You'll be able to use your T-Mobile Home Internet to connect your computer, phone, and numerous other devices in your home simultaneously. People over time-we appreciate your patience! As soon as we're ready for you, we'll let you know
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingFive">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                When do you expect to roll out more markets?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                            data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                Yes! You'll be able to use your T-Mobile Home Internet to connect your computer, phone, and numerous other devices in your home simultaneously. People over time-we appreciate your patience! As soon as we're ready for you, we'll let you know
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="faq-map-area">
+                                <div class="faq-map-title">
+                                    <h4 class="title">We are everywhere</h4>
+                                    <p>Home Internet customers that did not provide an email address for service notifications</p>
+                                </div>
+                                <div class="faq-map text-center">
+                                    <img src="{% static 'img/images/map_img.png' %}" alt="">
+                                    <a href="" class="btn map-btn">Check Your Network Coverage</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             faq-area-end -->
+
+            <!-- streaming-area
+            <section class="streaming-area streaming-bg" data-background="img/bg/streaming_bg.jpg">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-5 col-lg-7">
+                            <div class="section-title white-title text-center mb-60">
+                                <h2 class="title">Popular TV Shows Now Streaming</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="streaming-active">
+                                <ul>
+                                    <li>
+                                        <div class="streaming-item">
+                                            <div class="streaming-thumb">
+                                                <img src="{% static 'img/images/streaming_img01.jpg' %}" alt="">
+                                                <span class="tag">Music Song</span>
+                                                <a href="https://www.youtube.com/watch?v=XHOmBV4js_E" class="popup-video"><i class="fas fa-play"></i></a>
+                                            </div>
+                                            <div class="streaming-content">
+                                                <span class="category">Fashion & Life Style</span>
+                                                <h5 class="title"><a href="">Rockstar Fashion Show</a></h5>
+                                                <div class="stream-rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span>(80 Reviews)</span>
+                                                </div>
+                                                <div class="streaming-time">
+                                                    <p>fri - mon <span>9:30</span> PM</p>
+                                                    <div class="stream-logo">
+                                                        <img src="{% static 'img/images/stream_logo.png.png' %}" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="streaming-item">
+                                            <div class="streaming-thumb">
+                                                <img src="{% static 'img/images/streaming_img02.jpg' %}" alt="">
+                                                <span class="tag">Live</span>
+                                                <a href="https://www.youtube.com/watch?v=XHOmBV4js_E" class="popup-video"><i class="fas fa-play"></i></a>
+                                            </div>
+                                            <div class="streaming-content">
+                                                <span class="category">Fashion & Life Style</span>
+                                                <h5 class="title"><a href="">Rockstar Fashion Show</a></h5>
+                                                <div class="stream-rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span>(80 Reviews)</span>
+                                                </div>
+                                                <div class="streaming-time">
+                                                    <p>fri - mon <span>9:30</span> PM</p>
+                                                    <div class="stream-logo">
+                                                        <img src="{% static 'img/images/stream_logo.png.png' %}" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="streaming-item">
+                                            <div class="streaming-thumb">
+                                                <img src="{% static 'img/images/streaming_img03.jpg' %}" alt="">
+                                                <span class="tag">Tv Show</span>
+                                                <a href="https://www.youtube.com/watch?v=XHOmBV4js_E" class="popup-video"><i class="fas fa-play"></i></a>
+                                            </div>
+                                            <div class="streaming-content">
+                                                <span class="category">Fashion & Life Style</span>
+                                                <h5 class="title"><a href="">Rockstar Fashion Show</a></h5>
+                                                <div class="stream-rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span>(80 Reviews)</span>
+                                                </div>
+                                                <div class="streaming-time">
+                                                    <p>fri - mon <span>9:30</span> PM</p>
+                                                    <div class="stream-logo">
+                                                        <img src="{% static 'img/images/stream_logo.png.png' %}" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="streaming-item">
+                                            <div class="streaming-thumb">
+                                                <img src="{% static 'img/images/streaming_img04.jpg' %}" alt="">
+                                                <span class="tag">TV Serial</span>
+                                                <a href="https://www.youtube.com/watch?v=XHOmBV4js_E" class="popup-video"><i class="fas fa-play"></i></a>
+                                            </div>
+                                            <div class="streaming-content">
+                                                <span class="category">Fashion & Life Style</span>
+                                                <h5 class="title"><a href="">Rockstar Fashion Show</a></h5>
+                                                <div class="stream-rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span>(80 Reviews)</span>
+                                                </div>
+                                                <div class="streaming-time">
+                                                    <p>fri - mon <span>9:30</span> PM</p>
+                                                    <div class="stream-logo">
+                                                        <img src="{% static 'img/images/stream_logo.png.png' %}" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="streaming-item">
+                                            <div class="streaming-thumb">
+                                                <img src="{% static 'img/images/streaming_img05.jpg' %}" alt="">
+                                                <span class="tag">Cartoon Show</span>
+                                                <a href="https://www.youtube.com/watch?v=XHOmBV4js_E" class="popup-video"><i class="fas fa-play"></i></a>
+                                            </div>
+                                            <div class="streaming-content">
+                                                <span class="category">Fashion & Life Style</span>
+                                                <h5 class="title"><a href="">Rockstar Fashion Show</a></h5>
+                                                <div class="stream-rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span>(80 Reviews)</span>
+                                                </div>
+                                                <div class="streaming-time">
+                                                    <p>fri - mon <span>9:30</span> PM</p>
+                                                    <div class="stream-logo">
+                                                        <img src="{% static 'img/images/stream_logo.png.png' %}" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             streaming-area-end -->
+
+            <!-- blog-area 
+            <section class="blog-area pt-110">
+                <div class="container">
+                    <div class="row align-items-end justify-content-between mb-60">
+                        <div class="col-xl-5 col-lg-6 col-md-8">
+                            <div class="section-title">
+                                <h2 class="title">Read Our Recent Blog Posts</h2>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-4">
+                            <div class="section-title-btn text-start text-md-end">
+                                <a href="" class="btn transparent-btn">Read all posts</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 col-sm-9">
+                            <div class="blog-post-item mb-50 wow fadeInUp" data-wow-delay=".2s">
+                                <div class="blog-post-thumb">
+                                    <a href=""><img src="{% static 'img/blog/blog_thumb01.jpg' %}" alt=""></a>
+                                </div>
+                                <div class="blog-post-content">
+                                    <ul class="blog-post-meta">
+                                        <li><i class="far fa-folder-open"></i> Network</li>
+                                        <li><i class="flaticon-user"></i> <a href="">Netfix</a></li>
+                                        <li><i class="flaticon-calendar"></i> 20 Jan 2021</li>
+                                    </ul>
+                                    <h3 class="title"><a href="">Children Loves the Cartoons And Our New Channels</a></h3>
+                                    <a href="" class="btn transparent-btn">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-9">
+                            <div class="blog-post-item mb-50 wow fadeInUp" data-wow-delay=".4s">
+                                <div class="blog-post-thumb">
+                                    <a href="blog-details.html"><img src="{% static 'img/blog/blog_thumb02.jpg' %}" alt=""></a>
+                                </div>
+                                <div class="blog-post-content">
+                                    <ul class="blog-post-meta">
+                                        <li><i class="far fa-folder-open"></i> Network</li>
+                                        <li><i class="flaticon-user"></i> <a href="blog.html">Netfix</a></li>
+                                        <li><i class="flaticon-calendar"></i> 20 Aug 2021</li>
+                                    </ul>
+                                    <h3 class="title"><a href="blog-details.html">Broadband May Disconnect in July Cause of Electricity Issues</a></h3>
+                                    <a href="blog-details.html" class="btn transparent-btn">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-9">
+                            <div class="blog-post-item mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <div class="blog-post-thumb">
+                                    <a href="blog-details.html"><img src="{% static 'img/blog/blog_thumb03.jpg' %}" alt=""></a>
+                                </div>
+                                <div class="blog-post-content">
+                                    <ul class="blog-post-meta">
+                                        <li><i class="far fa-folder-open"></i> Network</li>
+                                        <li><i class="flaticon-user"></i> <a href="blog.html">Netfix</a></li>
+                                        <li><i class="flaticon-calendar"></i> 20 July 2021</li>
+                                    </ul>
+                                    <h3 class="title"><a href="blog-details.html">We Newly Added Some International Comedy Channels This Week</a></h3>
+                                    <a href="blog-details.html" class="btn transparent-btn">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            blog-area-end -->
+
+            <!-- brand-area
+            <div class="brand-area pt-70 pb-120">
+                <div class="container">
+                    <div class="row brand-active">
+                        <div class="col">
+                            <div class="brand-item">
+                                <a href="#"><img src="{% static 'img/brand/brand_item01.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="brand-item">
+                                <a href="#"><img src="{% static 'img/brand/brand_item02.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="brand-item">
+                                <a href="#"><img src="{% static 'img/brand/brand_item03.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="brand-item">
+                                <a href="#"><img src="{% static 'img/brand/brand_item04.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="brand-item">
+                                <a href="#"><img src="{% static 'img/brand/brand_item05.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             brand-area-end -->
+
+
+        </main>
+        
+{% endblock content %}
