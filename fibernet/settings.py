@@ -28,9 +28,11 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
+    'fibernetbroadband.in',
     'www.fibernetbroadband.in',
-    'fibernetbroadband.in',  # Add your current ngrok domain here
+    'fibernet-475i.onrender.com'
 ]
+
 
 # Application definition
 
