@@ -10,7 +10,7 @@
     </title>
     <meta
       name="description"
-      content="One of the leading Fibernet Broadband Plans in Chennai. Call : 7603883971 to get latest Fibernet Broadband Offers."
+      content="One of the leading Fibernet Broadband Plans in Chennai. Call : 9087001153 to get latest Fibernet Broadband Offers."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.png' %}" />
@@ -74,9 +74,9 @@
                   <li>
                     <i class="flaticon-telephone-handle-silhouette"></i>
                     <a
-                      href="tel:+917603883971"
+                      href="tel:+919087001153"
                       style="color: #000; font-weight: 600"
-                      >7603883971</a
+                      >9087001153</a
                     >
                   </li>
                 </ul>
@@ -200,7 +200,7 @@
                     <div class="content">
                       <span>Call us 24/7</span>
                       <h6 class="title">
-                        <a href="tel:+917603883971">7603883971</a>
+                        <a href="tel:+919087001153">9087001153</a>
                       </h6>
                     </div>
                   </div>
@@ -279,14 +279,14 @@
     </footer>
     <!-- footer-area-end -->
     <a
-      href="https://api.whatsapp.com/send?phone=+917603883971&amp;text=Hello%2C%20I%20need%20some%20informations.%2C%20Please%20Contact%20me"
+      href="https://api.whatsapp.com/send?phone=+919087001153&amp;text=Hello%2C%20I%20need%20some%20informations.%2C%20Please%20Contact%20me"
       target="_blank"
       class="whatsapp_button"
     >
       <img src="{% static 'img/whatsapp.gif' %}" style="width: 80%" />
     </a>
 
-    <a href="tel:+917603883971" target="_blank" class="call_button">
+    <a href="tel:+919087001153" target="_blank" class="call_button">
       <img src="{% static 'img/call.gif' %}" style="width: 36%" />
     </a>
 
@@ -305,26 +305,10 @@
     <script src="{% static 'js/main.js' %}"></script>
 
 
-
-
 <script>
 $(document).ready(function () {
-    // Show/hide the popup form manually
-    $(".contact-icon").click(function () {
-        $("#contact-popup").show();
-    });
-    $("#close").click(function () {
-        $("#contact-popup").hide();
-    });
-
-    // Auto show popup after 8 seconds
-    setTimeout(function () {
-        $("#contact-popup").fadeIn();
-    }, 8000);
-
-    // AJAX form submit
     $("#enquiryForm").submit(function (event) {
-        event.preventDefault(); // prevent default form submit
+        event.preventDefault();  // prevent form reload
 
         const csrftoken = $("input[name='csrfmiddlewaretoken']").val();
 
@@ -333,35 +317,37 @@ $(document).ready(function () {
         $("#submitBtn").prop("disabled", true);
 
         $.ajax({
-            url: "/submit-enquiry/",  // Django endpoint
+            url: "/submit-enquiry/", // your Django form URL
             type: "POST",
             data: $(this).serialize(),
             headers: {
                 "X-CSRFToken": csrftoken
             },
             success: function (response) {
+                console.log("Server Response:", response);  // Debug log
+
                 if (response.status === 'success') {
                     $("#loadingSpinner").hide();
-                    $("#submitText").show();
                     $("#submitBtn").prop("disabled", false);
                     $("#enquiryForm")[0].reset();
 
-                    // ✅ Show custom success popup
-                    $("#successPopup").fadeIn();
+                    // ✅ Hide popup
+                    $("#contact-popup").fadeOut();
 
-                    // Hide after 4 seconds (optional)
+                    // ✅ Redirect to thank you page
                     setTimeout(function () {
-                        $("#successPopup").fadeOut();
-                    }, 4000);
+                        window.location.href = "/thankyou/";
+                    }, 500);
                 } else {
-                    alert("Google Sheets Error: " + response.message);
+                    alert("Error: " + response.message);
                     $("#loadingSpinner").hide();
                     $("#submitText").show();
                     $("#submitBtn").prop("disabled", false);
                 }
             },
-            error: function () {
-                alert("Something went wrong. Please try again.");
+            error: function (xhr, status, error) {
+                console.log("AJAX Error:", error);
+                alert("Submission failed: " + error);
                 $("#loadingSpinner").hide();
                 $("#submitText").show();
                 $("#submitBtn").prop("disabled", false);
@@ -370,7 +356,6 @@ $(document).ready(function () {
     });
 });
 </script>
-
 
   </body>
   <style>

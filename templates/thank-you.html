@@ -1,0 +1,82 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<!-- main-area -->
+<main>
+  <!-- breadcrumb-area -->
+  <section class="breadcrumb-area breadcrumb-bg">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div style="text-align: center; margin-top: 100px">
+          <!-- ✅ Checkmark animation -->
+          <div class="checkmark-circle">
+            <svg viewBox="0 0 52 52">
+              <path d="M14 27 L22 35 L38 18" />
+            </svg>
+          </div>
+
+          <!-- ✅ Thank You Message -->
+          <h1 class="thank-you-text">Thank you for your enquiry!</h1>
+          <p style="font-size: 18px; color: #e60b0b">
+            We’ll get back to you shortly..!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ✅ Custom thank-you animation styles -->
+<style>
+  .checkmark-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #28a745;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    animation: popIn 0.6s ease-out forwards;
+  }
+
+  .checkmark-circle svg {
+    width: 40px;
+    height: 40px;
+    stroke: white;
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+
+  .thank-you-text {
+    font-size: 36px;
+    font-weight: 700;
+    color: #28a745;
+    animation: slideIn 1s ease;
+  }
+
+  @keyframes popIn {
+    0% {
+      transform: scale(0.2);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+{% endblock content %}

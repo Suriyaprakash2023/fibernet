@@ -13,6 +13,8 @@ def airtel(request):
   return render(request,'airtel.html')
 def hathway(request):
   return render(request,'hathway.html')
+def thankyou(request):
+  return render(request,'thank-you.html')
 
 
 # views.py
@@ -30,29 +32,37 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 SPREADSHEET_ID = '18HRqJv5wETVYUezBczAX4Lrsn3NgtZKL00_oCZbOmUw'  # Replace with your actual Google Sheet ID
 RANGE_NAME = 'Sheet1!A2'  # Adjust if you want a different sheet/range
 
+
 @csrf_exempt
 def enquiry_submit(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        mobile = request.POST.get('mobile')
-        message = request.POST.get('message')
+        try:
+            name = request.POST.get('name')
+            email = request.POST.get('email')
+            mobile = request.POST.get('mobile')
+            message = request.POST.get('message')
 
-        # Save to DB
-        Enquiry.objects.create(name=name, email=email, mobile=mobile, message=message)
+            # Save to DB
+            Enquiry.objects.create(name=name, email=email, mobile=mobile, message=message)
 
-        # Save to Google Sheet
-        credentials = service_account.Credentials.from_service_account_file(
-            SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-        service = build('sheets', 'v4', credentials=credentials)
-        values = [[name, email, mobile, message]]
-        body = {'values': values}
-        service.spreadsheets().values().append(
-            spreadsheetId=SPREADSHEET_ID,
-            range=RANGE_NAME,
-            valueInputOption='RAW',
-            insertDataOption='INSERT_ROWS',
-            body=body
-        ).execute()
+            # Google Sheet
+            credentials = service_account.Credentials.from_service_account_file(
+                SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+            service = build('sheets', 'v4', credentials=credentials)
 
-        return JsonResponse({'status': 'success'})
+            values = [[name, email, mobile, message]]
+            body = {'values': values}
+
+            service.spreadsheets().values().append(
+                spreadsheetId=SPREADSHEET_ID,
+                range=RANGE_NAME,
+                valueInputOption='RAW',
+                insertDataOption='INSERT_ROWS',
+                body=body
+            ).execute()
+
+            return JsonResponse({'status': 'success'})
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'message': str(e)})
+
+    return JsonResponse({'status': 'invalid_method'})

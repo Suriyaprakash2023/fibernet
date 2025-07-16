@@ -23,12 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-17n51x2w4@1o6z#pcrzs0vj@l)n-)twwfg@#cyo4!v^p*lt@*@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    '78c5b69bf90c.ngrok-free.app',  # Add your current ngrok domain here
+    'www.fibernetbroadband.in',
+    'fibernetbroadband.in',  # Add your current ngrok domain here
 ]
 
 # Application definition

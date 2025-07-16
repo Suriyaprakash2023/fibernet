@@ -9,5 +9,6 @@ urlpatterns = [
     path('act/', act,name='act'),
     path('airtel/', airtel,name='airtel'),
     path('hathway/', hathway,name='hathway'),
-     path('submit-enquiry/', enquiry_submit, name='submit-enquiry'),
+    path('thankyou/', thankyou,name='thankyou'),
+    path('submit-enquiry/', enquiry_submit, name='submit-enquiry'),
 ]
