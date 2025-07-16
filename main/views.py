@@ -21,17 +21,29 @@ def thankyou(request):
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from .models import Enquiry
-
+import json
 import os
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+from .models import Enquiry
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+import os
+import json
 
-# Constants
-SERVICE_ACCOUNT_FILE = os.path.join('credentials', 'google_sheet_key.json')  # Update path if needed
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SPREADSHEET_ID = '18HRqJv5wETVYUezBczAX4Lrsn3NgtZKL00_oCZbOmUw'  # Replace with your actual Google Sheet ID
-RANGE_NAME = 'Sheet1!A2'  # Adjust if you want a different sheet/range
+# ✅ Load credentials from environment variable (Render safe)
+google_creds = json.loads(os.environ["GOOGLE_SERVICE_ACCOUNT_JSON"])
+credentials = service_account.Credentials.from_service_account_info(
+    google_creds,
+    scopes=["https://www.googleapis.com/auth/spreadsheets"]
+)
+service = build('sheets', 'v4', credentials=credentials)
 
+# ✅ Google Sheet settings
+SPREADSHEET_ID = '18HRqJv5wETVYUezBczAX4Lrsn3NgtZKL00_oCZbOmUw'
+RANGE_NAME = 'Sheet1!A2'  # Use correct tab name!
 
 @csrf_exempt
 def enquiry_submit(request):
@@ -42,14 +54,10 @@ def enquiry_submit(request):
             mobile = request.POST.get('mobile')
             message = request.POST.get('message')
 
-            # Save to DB
+            # ✅ Save to database
             Enquiry.objects.create(name=name, email=email, mobile=mobile, message=message)
 
-            # Google Sheet
-            credentials = service_account.Credentials.from_service_account_file(
-                SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-            service = build('sheets', 'v4', credentials=credentials)
-
+            # ✅ Append to Google Sheet
             values = [[name, email, mobile, message]]
             body = {'values': values}
 
