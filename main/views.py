@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 # Create your views here.
 def index(request):
@@ -17,33 +17,11 @@ def thankyou(request):
   return render(request,'thank-you.html')
 
 
-# views.py
+
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from .models import Enquiry
-import json
-import os
-from google.oauth2 import service_account
-from googleapiclient.discovery import build
-from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse
-from .models import Enquiry
-from google.oauth2 import service_account
-from googleapiclient.discovery import build
-import os
-import json
 
-# ✅ Load credentials from environment variable (Render safe)
-google_creds = json.loads(os.environ["GOOGLE_SERVICE_ACCOUNT_JSON"])
-credentials = service_account.Credentials.from_service_account_info(
-    google_creds,
-    scopes=["https://www.googleapis.com/auth/spreadsheets"]
-)
-service = build('sheets', 'v4', credentials=credentials)
-
-# ✅ Google Sheet settings
-SPREADSHEET_ID = '18HRqJv5wETVYUezBczAX4Lrsn3NgtZKL00_oCZbOmUw'
-RANGE_NAME = 'Sheet1!A2'  # Use correct tab name!
 
 @csrf_exempt
 def enquiry_submit(request):
@@ -57,20 +35,52 @@ def enquiry_submit(request):
             # ✅ Save to database
             Enquiry.objects.create(name=name, email=email, mobile=mobile, message=message)
 
-            # ✅ Append to Google Sheet
-            values = [[name, email, mobile, message]]
-            body = {'values': values}
-
-            service.spreadsheets().values().append(
-                spreadsheetId=SPREADSHEET_ID,
-                range=RANGE_NAME,
-                valueInputOption='RAW',
-                insertDataOption='INSERT_ROWS',
-                body=body
-            ).execute()
-
             return JsonResponse({'status': 'success'})
         except Exception as e:
             return JsonResponse({'status': 'error', 'message': str(e)})
 
     return JsonResponse({'status': 'invalid_method'})
+
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+def login_view(request):
+   if request.method == 'POST':
+      username = request.POST['username']
+      password = request.POST['password']
+
+      user = authenticate(request,username=username,password=password)
+      if user is not None:
+            login(request, user)
+            return redirect('dashboard')  # Change to your home page URL name
+      else:
+            messages.error(request, 'Invalid credentials')
+   return render(request,'admin/login.html')
+
+def dashboard(request):
+  enquiries = Enquiry.objects.all().order_by("-created_at")
+
+  return render(request,'admin/data.html',{"enquiries":enquiries} )
+
+
+
+def status_update(request,id):
+   if request.method == 'POST':
+      status = request.POST['status']
+      print(status)
+
+      if status == 'True':
+           print("dfd")
+           enquiry = Enquiry.objects.get(id=id)
+           enquiry.is_enquiryed = True
+           enquiry.save()
+           
+           messages.success(request, 'Status Update successfully')
+           return redirect('dashboard')
+      else:
+          enquiry = Enquiry.objects.get(id=id)
+          enquiry.is_enquiryed = False
+          enquiry.save()
+          messages.success(request, 'Status Update successfully')
+          return redirect('dashboard')
+            
+   return render(request,'admin/login.html')

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="Multipurpose, super flexible, powerful, clean modern responsive bootstrap 5 admin template"
+      name="description"
+    />
+    <meta
+      content="admin template, ki-admin admin template, dashboard template, flat admin template, responsive admin template, web app"
+      name="keywords"
+    />
+    <meta content="la-themes" name="author" />
+    <link
+      href="{% static 'admin/images/logo/favicon.png' %}"
+      rel="icon"
+      type="image/x-icon"
+    />
+    <link
+      href="{% static 'admin/images/logo/favicon.png' %}"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+
+    <title>Data Table</title>
+
+    <!--font-awesome-css-->
+    <link
+      href="{% static 'admin/vendor/fontawesome/css/all.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Data Table css-->
+    <link
+      href="{% static 'admin/vendor/datatable/jquery.dataTables.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- tabler icons-->
+    <link
+      href="{% static 'admin/vendor/tabler-icons/tabler-icons.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!--flag Icon css-->
+    <link
+      href="{% static 'admin/vendor/flag-icons-master/flag-icon.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Bootstrap css-->
+    <link
+      href="{% static 'admin/vendor/bootstrap/bootstrap.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- simplebar css-->
+    <link
+      href="{% static 'admin/vendor/simplebar/simplebar.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- App css-->
+    <link
+      href="{% static 'admin/css/style.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Responsive css-->
+    <link
+      href="{% static 'admin/css/responsive.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <div class="app-wrapper">
+      <div class="loader-wrapper">
+        <div class="loader_24"></div>
+      </div>
+
+      <!-- Menu Navigation starts -->
+      <nav>
+        <div class="app-logo">
+          <a class="logo d-inline-block" href="index.html">
+            <img alt="#" src="{% static 'admin/images/logo/1.png' %}" />
+          </a>
+
+          <span class="bg-light-primary toggle-semi-nav d-flex-center">
+            <i class="ti ti-chevron-right"></i>
+          </span>
+        </div>
+        <div class="app-nav" id="app-simple-bar">
+          <ul class="main-nav p-0 mt-2">
+            <li class="menu-title">
+              <span>Dashboard</span>
+            </li>
+            <li>
+              <a
+                aria-expanded="false"
+                data-bs-toggle="collapse"
+                href="#dashboard"
+              >
+                <svg stroke="currentColor" stroke-width="1.5">
+                  <use
+                    xlink:href="https://phpstack-1384472-5121645.cloudwaysapps.com/template/html/ki-admin/assets/svg/_sprite.svg#home"
+                  ></use>
+                </svg>
+                dashboard
+                <span
+                  class="badge bg-danger badge-dashboard badge-notification ms-2"
+                  >New</span
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-navs">
+          <span class="menu-previous"><i class="ti ti-chevron-left"></i></span>
+          <span class="menu-next"><i class="ti ti-chevron-right"></i></span>
+        </div>
+      </nav>
+      <!-- Menu Navigation ends -->
+
+      <div class="app-content">
+        <div>
+          <!-- Header Section starts -->
+          <header class="header-main">
+            <div class="container-fluid">
+              <div class="row">
+                <div
+                  class="col-8 col-sm-6 d-flex align-items-center header-left p-0"
+                >
+                  <span class="header-toggle">
+                    <i class="ph ph-squares-four"></i>
+                  </span>
+
+                  <div class="header-searchbar w-100">
+                    <form action="#" class="mx-sm-3 app-form app-icon-form">
+                      <div class="position-relative">
+                        <input
+                          aria-label="Search"
+                          class="form-control"
+                          placeholder="Search..."
+                          type="search"
+                        />
+                        <i class="ti ti-search text-dark"></i>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <div
+                  class="col-4 col-sm-6 d-flex align-items-center justify-content-end header-right p-0"
+                >
+                  <ul class="d-flex align-items-center">
+                    <li class="header-language">
+                      <div class="flex-shrink-0 dropdown" id="lang_selector">
+                        <a
+                          aria-expanded="false"
+                          class="d-block head-icon ps-0"
+                          data-bs-toggle="dropdown"
+                          href="#"
+                        >
+                          <div class="lang-flag lang-en">
+                            <span class="flag rounded-circle overflow-hidden">
+                              <i class=""></i>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                    </li>
+
+                    <li class="header-dark">
+                      <div
+                        class="sun-logo head-icon bg-light-dark rounded-circle f-s-22 p-2"
+                      >
+                        <i class="ph ph-moon-stars"></i>
+                      </div>
+                      <div
+                        class="moon-logo head-icon bg-light-dark rounded-circle f-s-22 p-2"
+                      >
+                        <i class="ph ph-sun-dim"></i>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </header>
+          <!-- Header Section ends -->
+
+          <!-- Body main section starts -->
+          <main>
+            <div class="container-fluid">
+              <!-- Data Table start -->
+              <div class="row">
+                <!-- Default Datatable start -->
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5>Enquirey Datatable</h5>
+                    </div>
+                    <div class="card-body p-0">
+                      <div class="app-datatable-default overflow-auto">
+                        <table
+                          class="display app-data-table default-data-table"
+                          id="example"
+                        >
+                          <thead>
+                            <tr>
+                              <th>Name</th>
+                              <th>Email</th>
+                              <th>Mobile Number</th>
+                              <th>Message</th>
+                              <th>Enquirey date</th>
+                              <th>Status</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for enquirey in enquiries %}
+                            <tr>
+                              <td>{{enquirey.name}}</td>
+                              <td>{{ enquirey.email }}</td>
+                              <td>{{enquirey.mobile}}</td>
+                              <td>{{ enquirey.message }}</td>
+                              <td>{{ enquirey.created_at }}</td>
+                              <td>{{ enquirey.is_enquiryed }}</td>
+                              <td>
+                                <form
+                                  action="{% url 'status_update' enquirey.id %}"
+                                  method="post"
+                                >
+                                  {% csrf_token %}
+                                  <input
+                                    type="hidden"
+                                    name="status"
+                                    value="True"
+                                  />
+                                  <button
+                                    class="btn btn-light-success icon-btn b-r-4"
+                                    type="submit"
+                                  >
+                                    <i class="ti ti-edit text-success"></i>
+                                  </button>
+                                </form>
+                                <form
+                                  action="{% url 'status_update' enquirey.id  %}"
+                                  method="post"
+                                >
+                                  {% csrf_token %}
+                                  <input
+                                    type="hidden"
+                                    name="status"
+                                    value="False"
+                                  />
+                                  <button
+                                    class="btn btn-light-danger icon-btn b-r-4"
+                                    type="submit"
+                                  >
+                                    <i class="ti ti-trash"></i>
+                                  </button>
+                                </form>
+                              </td>
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Default Datatable end -->
+              </div>
+              <!-- Data Table end -->
+            </div>
+          </main>
+
+          <!-- Body main section ends -->
+
+          <!-- tap on top -->
+          <div class="go-top">
+            <span class="progress-value">
+              <i class="ti ti-arrow-up"></i>
+            </span>
+          </div>
+
+          <!-- Footer Section starts-->
+          <footer>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-9 col-12">
+                  <p class="footer-text f-w-600 mb-0">
+                    Copyright © 2025 ArunAirtel
+                  </p>
+                </div>
+                <div class="col-md-3">
+                  <div class="footer-text text-end">
+                    <a
+                      class="f-w-500 text-primary"
+                      href="mailto:teqlathemes@gmail.com"
+                    >
+                      Need Help <i class="ti ti-help"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <!-- Footer Section ends-->
+        </div>
+      </div>
+    </div>
+
+    <div class="go-top">
+      <span class="progress-value">
+        <i class="ti ti-arrow-up"></i>
+      </span>
+    </div>
+
+    <!--customizer-->
+    <div id="customizer"></div>
+
+    <!-- latest jquery-->
+    <script src="{% static 'admin/vendor/datatable/jquery-3.5.1.js' %}"></script>
+
+    <!-- data table js -->
+    <script src="{% static 'admin/vendor/datatable/jquery.dataTables.min.js' %}"></script>
+
+    <!-- phosphor js -->
+    <script src="{% static 'admin/vendor/phosphor/phosphor.js' %}"></script>
+
+    <!-- Bootstrap js-->
+    <script src="{% static 'admin/vendor/bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- phosphor js -->
+    <script src="{% static 'admin/vendor/phosphor/phosphor.js' %}"></script>
+
+    <!-- Simple bar js-->
+    <script src="{% static 'admin/vendor/simplebar/simplebar.js' %}"></script>
+
+    <!-- js-->
+    <script src="{% static 'admin/js/data_table.js' %}"></script>
+
+    <!-- App js-->
+    <script src="{% static 'admin/js/script.js' %}"></script>
+
+    <!-- Customizer js-->
+    <script src="{% static 'admin/js/customizer.js' %}"></script>
+  </body>
+
+  <!-- Mirrored from phpstack-1384472-5121645.cloudwaysapps.com/template/html/ki-admin/template/data_table.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 17 Jul 2025 05:57:53 GMT -->
+</html>

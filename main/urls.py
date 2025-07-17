@@ -10,5 +10,8 @@ urlpatterns = [
     path('airtel/', airtel,name='airtel'),
     path('hathway/', hathway,name='hathway'),
     path('thankyou/', thankyou,name='thankyou'),
+    path('login_view/', login_view,name='login_view'),
+    path('dashboard/', dashboard,name='dashboard'),
     path('submit-enquiry/', enquiry_submit, name='submit-enquiry'),
+    path('status_update/<str:id>/', status_update, name='status_update'),
 ]
