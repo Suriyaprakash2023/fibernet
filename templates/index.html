@@ -14,14 +14,14 @@
                             <div class="banner-content">
                                 <div class="formbg fadeInUp wow">
 									<h3><span>Enquiry Now to Get </br>15% Discount</span></h3>
-									<form action="#" method="POST" id="airtelauth"  onSubmit="return false;" encytype="multipart/form-data" class="fadeInUp">
-										  <!-- 2 column grid layout with text inputs for the first and last names -->
+									<form action="" id="enquiryForm airtelauth" method="POST" onSubmit="return false;" encytype="multipart/form-data" class="fadeInUp">
+										{% csrf_token %}
+                                        <!-- 2 column grid layout with text inputs for the first and last names -->
 										  
 											  <div class="form-outline mb-4">
-											  <input type="hidden" id="airtelauthid" name="airtelauthid">
-												
-												<input class="form-control" name="name" placeholder="Name*" type="text" required="required">
-											  </div>
+											    <input type="hidden" id="CForm" name="CForm">
+                                                <input class="form-control" name="name" placeholder="Name*" type="text" required="required">
+                                            </div>
 										  <!-- Email input -->
 										  <div class="form-outline mb-4">
 											<input class="form-control" name="email" placeholder="Email*" type="email" required="required">
@@ -32,17 +32,23 @@
 											<input class="form-control" name="mobile" placeholder="Mobile*" type="number" required="required">
 										  </div>
 										  <div class="form-outline mb-4">												
-											<input class="form-control" name="address" placeholder="Installation Address*" type="text" required="required">
+											<textarea class="form-control" name="message" placeholder="Message" ></textarea>
 										</div>
 
 										  <!-- Message input -->
-										  <div class="form-outline mb-4">
-											<textarea class="form-control" name="message" placeholder="Message*" required="required"></textarea>
-										  </div>
+										  
 										   <!--<div class="alert alert-success message success1" style="display:none;">Thank You, we'll get back you soon. </div>
 											<div class="alert alert-danger message failure1" style="display:none;">Sorry, Please try again </div> -->
 										<!-- Submit button -->
-										  <button type="submit" id="btnSubmit" class="btn btn-primary btn-block mb-4 HFormBtn" style="">Book Now</button>
+										 <button type="submit" class="mt-2 sbbtn d-flex justify-content-center align-items-center" id="submitBtn" style="width:100%; border-radius:0;">
+                                            <span id="submitText">Enquiry Now!</span>
+                                            <div id="loadingSpinner" class="spinner-border text-light" style="display:none; width: 1.5rem; height: 1.5rem; margin-left: 10px;">
+                                                <span class="visually-hidden">Processing...</span>
+                                            </div>
+                                            <div id="successMessage" style="display:none; color: white; font-size: 20px; margin-left: 10px;">
+                                                <i class="bi bi-check-circle" style="color: white;"></i> Success
+                                            </div>
+                                        </button>
 										  
 									</form>
 								</div> 
@@ -246,7 +252,7 @@
              cta-area-end -->
 
             <!-- special-offer-area -->
-            <section class="special-offer-area pt-120 pb-120">
+            {% comment %} <section class="special-offer-area pt-120 pb-120">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-6 order-0 order-lg-2">
@@ -275,11 +281,11 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> {% endcomment %}
             <!-- special-offer-area-end -->
 
             <!-- subscribe-area -->
-            <section class="subscribe-area subscribe-bg" data-background="{% static 'img/bg/subscribe_bg.jpg' %}">
+            {% comment %} <section class="subscribe-area subscribe-bg" data-background="{% static 'img/bg/subscribe_bg.jpg' %}">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-7 col-lg-6">
@@ -302,7 +308,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> {% endcomment %}
             <!-- subscribe-area-end -->
 
             <!-- faq-area 
