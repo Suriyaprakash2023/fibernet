@@ -14,4 +14,5 @@ urlpatterns = [
     path('dashboard/', dashboard,name='dashboard'),
     path('submit-enquiry/', enquiry_submit, name='submit-enquiry'),
     path('status_update/<str:id>/', status_update, name='status_update'),
+     path('logout_view/', logout_view, name='logout_view'),
 ]

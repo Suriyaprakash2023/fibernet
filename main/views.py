@@ -61,6 +61,14 @@ def dashboard(request):
 
   return render(request,'admin/data.html',{"enquiries":enquiries} )
 
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+from django.contrib import messages
+
+def logout_view(request):
+    logout(request)
+    messages.success(request, "You have been logged out successfully.")
+    return redirect('index')  # change 'login' to your login page URL name
 
 
 def status_update(request,id):

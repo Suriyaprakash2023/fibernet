@@ -117,18 +117,14 @@
               <a
                 aria-expanded="false"
                 data-bs-toggle="collapse"
-                href="#dashboard"
+                href="{% url 'logout_view' %}"
               >
                 <svg stroke="currentColor" stroke-width="1.5">
                   <use
                     xlink:href="https://phpstack-1384472-5121645.cloudwaysapps.com/template/html/ki-admin/assets/svg/_sprite.svg#home"
                   ></use>
                 </svg>
-                dashboard
-                <span
-                  class="badge bg-danger badge-dashboard badge-notification ms-2"
-                  >New</span
-                >
+                <a href="{% url 'logout_view' %}">Logout</a>
               </a>
             </li>
           </ul>
